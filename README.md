@@ -1,4 +1,4 @@
-# Mini projet : Application CRUD (Creation, Consulation, Modification et Suppression) 
+# Mini projet : Application de Cabinet Medical
 
 ## Prérequis 
 
