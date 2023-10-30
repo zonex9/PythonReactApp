@@ -1,4 +1,4 @@
-# Mini projet : Application de Cabinet Medical
+# Projet : Application de Cabinet Medical
 
 ## Prérequis 
 
