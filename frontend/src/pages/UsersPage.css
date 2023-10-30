@@ -1,35 +1,20 @@
 /* ListUserPage.css */
 
-
 body {
     margin: 0;
     padding: 0;
     background-color: #f2f2f2; /* Beautiful gray background color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     font-family: Arial, sans-serif;
 }
 
 .container {
     width: 80%;
     max-width: 1200px;
+    margin: 50px auto;
     background-color: #ffffff; /* White background for the content */
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.table {
-    width: 100%;
-    margin-bottom: 1rem;
-    color: #212529;
-    border-collapse: collapse;
-}
-
-.container {
-    margin-top: 50px;
 }
 
 .table {
@@ -93,6 +78,16 @@ body {
     text-decoration: underline;
 }
 
-/* ListUserPage.css */
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
 
-/* Rest of your styles */
+    .btn {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* ListUserPage.css */

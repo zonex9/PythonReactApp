@@ -18,18 +18,27 @@ ma=Marshmallow(app)
 class Users(db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer,primary_key=True)
-    name = db.Column(db.String(100))
+    nom = db.Column(db.String(100))
+    prenom = db.Column(db.String(100))
+    age = db.Column(db.Integer)
     email = db.Column(db.String(100))
+    region = db.Column(db.String(100))
+    ville = db.Column(db.String(100))
+    adresse = db.Column(db.String(100))
     date = db.Column(db.DateTime,default=datetime.datetime.now)
  
-    def __init__(self,name,email):
-        self.name=name
+    def __init__(self,nom,prenom,age,email,region,ville,adresse):
+        self.nom=nom
+        self.prenom=prenom
+        self.age=age
         self.email=email
- 
- 
+        self.region=region
+        self.ville=ville
+        self.adresse=adresse
+
 class UserSchema(ma.Schema):
     class Meta:
-        fields = ('id','name','email','date')
+        fields = ('id','nom','email','prenom','age','region','ville','adresse')
  
 user_schema = UserSchema()
 users_schema = UserSchema(many=True)
@@ -49,12 +58,22 @@ def userdetails(id):
 def userupdate(id):
     user = Users.query.get(id)
  
-    name = request.json['name']
+    nom = request.json['nom']
+    prenom = request.json['prenom']
+    age = request.json['age']
     email = request.json['email']
- 
-    user.name = name
+    region = request.json['region']
+    ville = request.json['ville']
+    adresse = request.json['adresse']
+
+    user.nom = nom
+    user.prenom = prenom
+    user.age = age
     user.email = email
- 
+    user.region = region
+    user.ville = ville
+    user.adresse = adresse
+
     db.session.commit()
     return user_schema.jsonify(user)
  
@@ -67,10 +86,15 @@ def userdelete(id):
  
 @app.route('/useradd',methods=['POST'])
 def useradd():
-    name = request.json['name']
+    nom = request.json['nom']
+    prenom = request.json['prenom']
+    age = request.json['age']
     email = request.json['email']
+    region = request.json['region']
+    ville = request.json['ville']
+    adresse = request.json['adresse']
  
-    users = Users(name,email)
+    users = Users(nom,prenom,age,email,region,ville,adresse)
     db.session.add(users)
     db.session.commit()
     return user_schema.jsonify(users)

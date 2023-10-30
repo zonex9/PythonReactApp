@@ -33,14 +33,41 @@ export default function CreateUser(){
                 <h1>Ajouter un patient</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                      <label>Nom</label>
-                      <input type="text" className="form-control" name="name" onChange={handleChange} />
+                      <label>Nom </label>
+                      <input type="text" className="form-control" name="nom" onChange={handleChange} />
                     </div>
+                    <p/>
                     <div className="mb-3">
-                      <label>Adresse mail</label>
+                      <label>Prénom </label>
+                      <input type="text" className="form-control" name="prenom" onChange={handleChange} />
+                    </div>
+                    <p/>
+                    <div className="mb-3">
+                      <label>Adresse mail </label>
                       <input type="text" className="form-control" name="email" onChange={handleChange} />
-                    </div>   
-                    <button type="submit" name="add" className="btn btn-primary">Savegarder</button>
+                    </div>
+                    <p/>
+                    <div className="mb-3">
+                      <label>Age </label>
+                      <input type="text" className="form-control" name="age" onChange={handleChange} />
+                    </div>
+                    <p/> 
+                    <div className="mb-3">
+                      <label>Région </label>
+                      <input type="text" className="form-control" name="region" onChange={handleChange} />
+                    </div>
+                    <p/>
+                    <div className="mb-3">
+                      <label>Ville </label>
+                      <input type="text" className="form-control" name="ville" onChange={handleChange} />
+                    </div>
+                    <p/>
+                    <div className="mb-3">
+                      <label>Adresse </label>
+                      <input type="text" className="form-control" name="adresse" onChange={handleChange} />
+                    </div>
+                    <p/> 
+                    <button type="submit" name="add" className="btn btn-success">Savegarder</button>
                 </form>
                 </div>
                 <div className="col-2"></div>

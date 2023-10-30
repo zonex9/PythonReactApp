@@ -10,10 +10,7 @@ import EditUser from './pages/EditUser';
  
 function App() {
   return (
-    <div className="vh-100 gradient-custom">
-    <div className="container">
-      <h1 className="page-header text-center">Mini projet CRUD : Centre Médical</h1>
-    
+    <div className="vh-100 gradient-custom">    
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<ListUserPage />} />
@@ -21,7 +18,6 @@ function App() {
             <Route path="user/:id/edit" element={<EditUser />} />
         </Routes>
       </BrowserRouter>
-    </div>
     </div>
   );
 }

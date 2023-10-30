@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios" //npm install axios --save 
 import {Link} from 'react-router-dom';
-import "./ListUserPage.css"; // Import the CSS file
+import "./UsersPage.css"; // Import the CSS file
 
 export default function ListUserPage(){
   
@@ -38,8 +38,12 @@ export default function ListUserPage(){
                             <tr>
                                 <th>#</th>
                                 <th>Nom</th>
+                                <th>Prenom</th>
                                 <th>Adresse mail</th>
-                                <th>Date d'anout</th>
+                                <th>Age</th>
+                                <th>Région</th>
+                                <th>Ville</th>
+                                <th>Adresse</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -47,7 +51,13 @@ export default function ListUserPage(){
                             {users.map((user, key) =>
                                 <tr key={key}>
                                     <td>{user.id}</td>
-                                    <td>{user.name}</td>
+                                    <td>{user.nom}</td>
+                                    <td>{user.prenom}</td>
+                                    <td>{user.email}</td>
+                                    <td>{user.age}</td>
+                                    <td>{user.region}</td>
+                                    <td>{user.ville}</td>
+                                    <td>{user.adresse}</td>
                                     <td>{user.email}</td>
                                     <td>{user.date}</td>
                                     <td>
